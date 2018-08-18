@@ -1,2 +1,2 @@
 # Compiler-Assignment
-Assignment of Compiler Design (CSE 425)
+Assignments of Compiler Design (CSE 425)
