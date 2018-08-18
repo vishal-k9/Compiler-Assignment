@@ -1,0 +1,54 @@
+# Answers to all question in assignment1:
+
+Assignment:
+Take any small program (like printing "Hello World") and compile with any standard compiler (e.g. gcc) and understand different steps of compilation like pre-processing, compiler, assembler, linker.
+Demonstrate and submit your findings clearly writing:
+1. Your source pgm name
+2. Commercial tool used with options
+3. Pre-processor used, Output of Preprocessor
+4. Compiler used, Output of compiler
+5. Assembler used, Output of assembler
+6. linker used, output of linker.
+
+Ans1: hello.c
+
+Ans2: I have used GCC (GNU Compiler Collection). Other options are Turbo C, Microsoft 		  Visual Studio (MSVC), etc.
+
+Ans3: C PreProcessor (cpp) is the preprocessor used here. 
+
+	  ''' cpp hello.c > hello.i '''
+	  				OR
+	  ''' gcc hello.c -E -o hello.i '''
+	  output file is hello.i
+
+	  This is the first stage of compilation process where preprocessor directives (macros and header files are most common) are expanded.
+
+Ans4: ccl is the ccompiler used.
+
+	  ''' gcc -S hello.i '''
+	  				OR
+	  ''' gcc hello.c -S -o hello.s '''
+
+	  output file is hello.s
+
+	  File hello.s contains assembly code. The command line option -S tells the compiler to convert the preprocessed code to assembly language without creating an object file.
+
+Ans5: GNU Assembler(Gas) is the assembler used.
+
+	  ''' as hello.s -o hello.o '''
+	  				OR
+	  ''' gcc hello.c -c -o hello.o '''
+
+	  output file is hello.o
+
+	  The assembler (as) translates hello.s into machine language instructions, and generates an object file hello.o. 
+
+Ans6: GNU Linker (ld) is the linker used.
+
+	  ''' ld -dynamic-linker /lib64/ld-linux-x86-64.so.2  hello.o  -L /usr/lib/gcc/x86_64-redhat-linux/4.1.2/ -lc  -o hello '''
+	  				OR
+	  ''' gcc hello.c  -o hello '''
+
+	  output file is hello
+
+	  This phase links object files to produce final executable file. An executable file requires many external resources (system functions, C run-time libraries etc.).
