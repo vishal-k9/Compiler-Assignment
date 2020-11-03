@@ -2,9 +2,6 @@
 #include<stdio.h>
 #include <iterator>
 
-
-#define PIE 3.14159265358979323846
-#define MOD 1000000007
 // Non-recurrsive predictive parsing
 using namespace std;
 
